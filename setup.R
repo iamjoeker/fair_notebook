@@ -1,6 +1,6 @@
 local({
   r <- getOption("repos")
-  r["CRAN"] <- "http://cran.us.r-project.org"
+  r["CRAN"] <- "http://cran.us.r-project.org" #DevSkim: ignore DS137138 
   options(repos = r)
 })
 
