@@ -4,11 +4,14 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     fonts-dejavu \
     gfortran \
-    gcc && apt-get clean && \
+    gcc && \
+    ln -s /bin/tar /bin/gtar && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 USER $NB_USER
 
+RUN conda install --quiet --yes -c conda-forge readline=6.2
 RUN conda install --quiet --yes \
     'r-base=3.3.2' \
     'r-irkernel=0.7*' \
